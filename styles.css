@@ -1,0 +1,146 @@
+/* Basic reset to ensure consistent styling across browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    overflow: hidden; /* Prevents scrollbars if content slightly exceeds viewport */
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center; /* Horizontally center content */
+    align-items: center;   /* Vertically center content */
+    height: 100vh;         /* Ensure body takes full viewport height */
+    color: #333;
+}
+
+/* Container for the buttons on the home page */
+#home-page {
+    text-align: center;
+}
+
+/* Button container styling on the home page */
+#button-container {
+    margin-top: 50px;
+}
+
+/* General button styling */
+.action-btn {
+    background: linear-gradient(145deg, #6e7bff, #4a5df9); /* Blue gradient */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px; /* Rounded edges */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    margin: 10px;
+    width: 200px; /* Fixed width for consistency */
+    text-align: center;
+    /* Subtle shadow for a "neumorphic" feel */
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1), -3px -3px 5px rgba(255, 255, 255, 0.5);
+}
+
+/* Hover effect for buttons */
+.action-btn:hover {
+    background: linear-gradient(145deg, #4a5df9, #6e7bff); /* Reverse gradient for hover effect */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* Active button effect (when clicked) */
+.action-btn:active {
+    transform: translateY(2px); /* Slight press effect */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Optional: Add some text shadow for the button text */
+.action-btn span {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the game page container */
+#game-page {
+    display: flex;
+    flex-direction: column; /* Stack HUD and canvas vertically */
+    align-items: center;   /* Center content horizontally within game-page */
+    
+    /* Adjust this value to shift the entire game content (HUD + Canvas) upwards */
+    margin-top: -4px; /* Example: -30px to shift up, adjust as needed */
+}
+
+/* Styling sfor the HUD elements (Score, Timer, Accuracy, Spawn Rate) */
+#hud {
+    display: flex;
+    justify-content: space-around; /* Distribute items evenly with space around them */
+    font-family: sans-serif;
+    margin-bottom: 4px; /* Space below the HUD */
+    width: 100%; /* Ensure HUD stretches across the game area */
+    max-width: 600px; /* Optional: constrain HUD width to canvas width if desired */
+}
+
+#hud > div {
+    font-size: 1.2rem; /* Increase font size for readability */
+}
+
+/* Styling for the canvas wrapper */
+#canvas-wrapper {
+    /* Critical: Define explicit width and height for the wrapper
+       to perfectly contain the canvas and its border */
+    width: calc(600px + 4px);  /* 600px canvas + 2px border left + 2px border right */
+    height: calc(420px + 4px); /* 420px canvas + 2px border top + 2px border bottom */
+    
+    display: flex;
+    justify-content: center; /* Center canvas horizontally inside wrapper */
+    align-items: center;   /* Center canvas vertically inside wrapper */
+    
+    margin: 0; /* Remove any default margins */
+    padding: 0; /* Remove any default padding */
+    /* Remove 'position: relative' and 'top' here.
+       The margin-top on #game-page handles the vertical shift. */
+    /* position: relative; */
+    /* top: -5px; */ 
+}
+
+/* Explicitly define the dimensions of the canvas element */
+#game-canvas {
+    /* These properties are crucial to stop the growth */
+    width: 600px;  /* Set the displayed width directly */
+    height: 420px; /* Set the displayed height directly */
+
+    border: 2px solid #000; /* Border styling */
+    display: block; /* Ensures width/height are respected and eliminates extra space below */
+    margin: 0 auto; /* Horizontally center the canvas within its wrapper */
+    box-sizing: border-box; /* Ensures padding/border are included in the defined width/height */
+}
+
+/* Game Over Page Styling */
+#game-over-page {
+    display: none; /* Hidden by default */
+    text-align: center;
+    /* Add some spacing or centering for the game over content */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#game-over-page h2 {
+    margin-bottom: 15px;
+    color: #4a5df9;
+}
+
+#game-over-page p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* Styling for restart/back to menu buttons on game over page */
+#game-over-page .action-btn {
+    margin-top: 20px; /* Add some space above buttons */
+}

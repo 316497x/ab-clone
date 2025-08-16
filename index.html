@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AimBooster Clone</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="home-page">
+        <h1>AimBooster Clone</h1>
+        <div id="button-container">
+            <button id="challenge-btn" class="action-btn">Challenge</button>
+            <button id="train-btn" class="action-btn">Train</button>
+        </div>
+    </div>
+
+<div id="game-page" style="display: none;">
+    <div id="hud" style="display: flex; justify-content: space-around; font-family: sans-serif; margin-bottom: 1px;">
+        <div id="score">Score: 0</div>
+        <div id="timer">Time: 0s</div>
+        <div id="accuracy">Accuracy: 100%</div>
+        <div id="spawn-rate">Targets/sec: 1.5</div>
+    </div>
+
+    <div id="canvas-wrapper">
+        <canvas
+            id="game-canvas"
+            width="600" 
+            height="420"
+            style="border: 2px solid #000; display: block; margin: 0 auto;"
+        ></canvas>
+    </div>
+</div>
+    
+    <div id="game-over-page" style="display: none; text-align: center;">
+        <h2>Game Over</h2>
+        <p id="final-score"></p>
+        <p id="final-accuracy"></p>
+        <button id="restart-btn" class="action-btn">Restart</button>
+        <button id="back-to-menu-btn" class="action-btn">Main Menu</button>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
